@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Andi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #FFDDF2; /* Light pink background color */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #FF4D94; /* Pink text color */
+        }
+
+        p {
+            color: #FF4D94; /* Pink text color */
+        }
+
+        /* Create a repeating pattern of <3 in the background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ctext x='0' y='35' font-family='Arial' font-size='30' fill='%23FF4D94'%3E%26lt;3%3C/text%3E%3C/svg%3E");
+            background-repeat: repeat;
+            opacity: 0.1; /* Adjust opacity to make it less prominent */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>I Love You Andi</h1>
+
+    <div id="question1">
+        <p>1. Are you Andi?</p>
+        <button onclick="answerYes()">Yes</button>
+        <button onclick="answerNo()">No</button>
+    </div>
+
+    <script>
+        function answerYes() {
+            document.getElementById('question1').innerHTML = "<p>2. Are you pretty?</p>";
+            document.getElementById('question1').innerHTML += '<button onclick="answerPrettyYes()">Yes</button>';
+            document.getElementById('question1').innerHTML += '<button onclick="answerPrettyNo()">No</button>';
+        }
+
+        function answerNo() {
+            alert("Sorry, this quiz is for Andi only!");
+        }
+
+        function answerPrettyYes() {
+            document.getElementById('question1').innerHTML = "<p>TALAGAAAAAA SOBRAA!!!! URHGHHHH</p>";
+            document.getElementById('question1').innerHTML += '<button onclick="proceedToCall()">Proceed</button>';
+        }
+
+        function answerPrettyNo() {
+            document.getElementById('question1').innerHTML = "<p>2. Are you pretty?</p>";
+            document.getElementById('question1').innerHTML += '<button onclick="answerPrettyYes()">Yes</button>';
+            document.getElementById('question1').innerHTML += '<button onclick="answerPrettyNo()">No</button>';
+        }
+
+        function proceedToCall() {
+            document.getElementById('question1').innerHTML = "<p>3. Can we call, please? :( I miss you</p>";
+            document.getElementById('question1').innerHTML += '<button onclick="showYay()">Yes</button>';
+            document.getElementById('question1').innerHTML += '<button onclick="moveNoButton()">No</button>';
+        }
+
+        function showYay() {
+            document.getElementById('question1').innerHTML = '<p>Yay!! I LOVE YOUUUUUUU MY POOKIE MY BABYYYY URE THE PRETTIEST HOTTEST MOST BEAUTIFUL CUTEST SMARTEST ELEGANT MOST CHARMING MOST CLASSY PERSON EVER UGHHHH M SO BALIW SAYO</p>';
+        }
+
+        function moveNoButton() {
+            alert("Oops! Looks like you clicked the wrong button baby :<");
+            // You can add additional logic to handle the movement of the 'No' button.
+            // For simplicity, an alert is shown here.
+        }
+    </script>
+
+</body>
+</html>
